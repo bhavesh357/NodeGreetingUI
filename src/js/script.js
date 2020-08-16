@@ -1,4 +1,3 @@
-
 let notificationFlag=true;
 let dropdownNotification = document.getElementById('notificationDropdown');
 
@@ -80,11 +79,28 @@ function loadData(data){
                 "<div class=\"greeting-list-item-greeting-info\">(Name)</div>"+
             "</div>"+
             "<div class=\"greeting-list-item-time\">15 mins ago</div>"+
-            "<div class=\"greeting-list-item-btn greeting-list-item-delete\">"+
+            "<div onclick=\"deleteGreeting('"+data[i]._id+"')\" class=\"greeting-list-item-btn greeting-list-item-delete\">"+
                 "<img  class=\"greeting-list-item-btn\" src=\"./img/icons/delete.svg\">"+
             "</div>"+
             "</div>"+
         "</div>";
         greetingListItems.innerHTML+=item;
     }
+}
+
+function deleteGreeting(id){
+    console.log(id);
+    const otherParams={
+        headers:{
+            "content-type":"application/json; charset=UTF-8"
+        },
+        method: "DELETE"
+    };
+    fetch('http://localhost:3000/greeting/'+id,otherParams)
+    .then(data => {return data.json()})
+    .then(res => {
+        console.log(res);
+        loadGreetingData();
+    })
+    .catch(err => console.log(err));
 }
