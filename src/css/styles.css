@@ -1,0 +1,62 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+
+.side-menu{
+    background: url('../img/side-image.jpg');
+    background-blend-mode: multiply; 
+    width: 10em;
+    height: 100%;
+    color: black
+}
+
+.side-menu .col-md-12{
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.side-menu-half{
+    margin: 0px;
+}
+
+.row{
+    height: 100%;
+    margin: 0px;
+}
+
+.col{
+    padding: 0px;
+}
+
+.side-menu-top{
+    height: 3em;
+    border-bottom: solid 1px darkgray ;
+}
+
+.side-menu-bottom{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 1em;
+    font-size: 0.8em;
+}
+
+.side-menu-option{
+    cursor: pointer;
+    padding: 0.4em 0em;
+    display: flex;
+}
+
+.side-menu-option-button{
+    margin-left: 1em;
+}
+
+.side-menu-option-img{
+    width: 15px;
+    padding-right: 0em;
+}
