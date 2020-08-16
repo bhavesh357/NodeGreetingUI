@@ -149,3 +149,12 @@ body{
     margin: 0px;
     align-items: center;
 }
+
+.greeting-list{
+    padding-top: 3em;
+}
+
+.greeting-list-col{
+    padding-top: 2em;
+    font-weight: bold;
+}
