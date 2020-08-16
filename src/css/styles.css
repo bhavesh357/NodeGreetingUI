@@ -13,7 +13,8 @@ body{
     background-blend-mode: multiply; 
     width: 10em;
     height: 100%;
-    color: black
+    color: black;
+    position: fixed;
 }
 
 .side-menu .col-md-12{
@@ -59,4 +60,68 @@ body{
 .side-menu-option-img{
     width: 15px;
     padding-right: 0em;
+}
+
+.list{
+    margin-left: 12.5em;
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.navbar{
+    height: 3em;
+    border-bottom: solid 1px lightgray;
+    box-shadow: lightgrey 0px 5px 10px 0px;
+    padding: 0px;
+}
+
+#navbarTitle{
+    font-size: 1em;
+}
+
+#navbar-title-col{
+    padding-left: 0em;
+}
+
+.navbar-menu-icon{
+    width: 12px;
+    align-self: center;
+}
+
+.navbar-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-side-menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-notify-count{
+    background: #f44336;
+    padding: 0px 0.5em;
+    border-radius: 5px;
+    font-size: 0.7em;
+    display: flex;
+    height: 70%;
+    align-self: flex-end;
+    margin-right: 0.65em;
+    box-shadow: darkgrey 1px 1px 3px 1px;
+}
+
+.navbar-dropdown-toggle-button{
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid black;
+    align-self: center;
+    cursor: pointer;
+    margin-left: 0.65em;
+}
+
+.navbar-side-menu-option{
+    margin-left: 0.5em;
 }
