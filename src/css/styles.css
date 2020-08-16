@@ -76,6 +76,8 @@ body{
     width: -webkit-fill-available;
     left: 0;
     margin-left: 12.5em;
+    z-index: 1;
+    background: white;
 }
 
 #navbarTitle{
@@ -100,6 +102,11 @@ body{
 .navbar-side-menu{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+}
+
+.navbar-side-menu:hover{
+    color: #33b5e5;
 }
 
 .navbar-notify-count{
@@ -216,4 +223,22 @@ body{
 
 .greeting-list-item-delete:hover{
     bottom: 19%;
+}
+
+a{
+    color: inherit;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.navbar-dropdown-options{
+    position: absolute;
+    top: -100px;
+    border: solid 1px darkgray;
+    font-size: 1.2em;
+    background: white;
+    padding: 0.5em 1em;
+    transition: all 0.3s ease-in;
 }

@@ -25,29 +25,37 @@
                 <div id="navbarTitle">Greetings App</div>
             </div>
             <div class="col-md-4 navbar-menu">
-                <div class="navbar-side-menu">
+                <div class="navbar-side-menu" onclick="toggleNotification()" >
                     <div class="navbar-notify-count">1</div>
                     <img src="./img/icons/bell.svg" class="navbar-menu-icon">
                     <div class="navbar-dropdown-toggle-button" id="navbarNotifyToggle"></div>
+                    <div class="navbar-dropdown-options" id="notificationDropdown">
+                        <div class="notification dropdown-option">This is the Notification</div>
+                        <div class="notification dropdown-option">This is the Notification</div>
+                    </div>
                 </div>
-                <div class="navbar-side-menu">
+                <a class="navbar-side-menu"  href="./pages/messages.html">
                     <img src="./img/icons/envelope.svg" class="navbar-menu-icon">
-                </div>
-                <div class="navbar-side-menu">
+                </a>
+                <a class="navbar-side-menu" href="./pages/support.html">
                     <img src="./img/icons/question.svg" class="navbar-menu-icon">
                     <div class="navbar-side-menu-option">Support</div>
-                </div>
-                <div class="navbar-side-menu">
+                </a>
+                <div class="navbar-side-menu navbar-side-menu-tools" onclick="toggleTools()" >
                     <img src="./img/icons/tool.svg" class="navbar-menu-icon">
                     <div class="navbar-side-menu-option">Tools</div>
                     <div class="navbar-dropdown-toggle-button" id="navbarNotifyToggle"></div>
+                    <div class="navbar-dropdown-options" id="toolsDropdown">
+                        <div class="tool dropdown-option">Tool 1</div>
+                        <div class="tool dropdown-option">Tool 2</div>
+                    </div>
                 </div>
-                <div class="navbar-side-menu">
+                <a class="navbar-side-menu" href="./pages/signin.html">
                     <div class="navbar-side-menu-option" id="navbarSignIn">SIGN IN</div>
-                </div>
-                <div class="navbar-side-menu " id="navbarSignUpButton" >
+                </a>
+                <a class="navbar-side-menu "  href="./pages/signup.html" id="navbarSignUpButton" >
                     <div class="navbar-side-menu-option" id="navbarSignUp">SIGN UP</div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="row greeting-list">
@@ -161,6 +169,126 @@
                                 </div>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12  greeting-list-item">
+                                <div class="greeting-list-item-btn greeting-list-item-edit">
+                                    <img class="greeting-list-item-btn" src="./img/icons/pen.svg">
+                                </div>
+                                    <div class="greeting-list-item-id">ObjectId(7587898cvughvee4)</div>
+                                <div class="greeting-list-item-greeting greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Hello</div>
+                                    <div class="greeting-list-item-greeting-info">(Greeting)</div>
+                                </div>
+                                <div class="greeting-list-item-name greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Bhavesh</div>
+                                    <div class="greeting-list-item-greeting-info">(Name)</div>
+                                </div>
+                                <div class="greeting-list-item-time">15 mins ago</div>
+                                <div class="greeting-list-item-btn greeting-list-item-delete">
+                                    <img  class="greeting-list-item-btn" src="./img/icons/delete.svg">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12  greeting-list-item">
+                                <div class="greeting-list-item-btn greeting-list-item-edit">
+                                    <img class="greeting-list-item-btn" src="./img/icons/pen.svg">
+                                </div>
+                                    <div class="greeting-list-item-id">ObjectId(7587898cvughvee4)</div>
+                                <div class="greeting-list-item-greeting greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Hello</div>
+                                    <div class="greeting-list-item-greeting-info">(Greeting)</div>
+                                </div>
+                                <div class="greeting-list-item-name greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Bhavesh</div>
+                                    <div class="greeting-list-item-greeting-info">(Name)</div>
+                                </div>
+                                <div class="greeting-list-item-time">15 mins ago</div>
+                                <div class="greeting-list-item-btn greeting-list-item-delete">
+                                    <img  class="greeting-list-item-btn" src="./img/icons/delete.svg">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12  greeting-list-item">
+                                <div class="greeting-list-item-btn greeting-list-item-edit">
+                                    <img class="greeting-list-item-btn" src="./img/icons/pen.svg">
+                                </div>
+                                    <div class="greeting-list-item-id">ObjectId(7587898cvughvee4)</div>
+                                <div class="greeting-list-item-greeting greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Hello</div>
+                                    <div class="greeting-list-item-greeting-info">(Greeting)</div>
+                                </div>
+                                <div class="greeting-list-item-name greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Bhavesh</div>
+                                    <div class="greeting-list-item-greeting-info">(Name)</div>
+                                </div>
+                                <div class="greeting-list-item-time">15 mins ago</div>
+                                <div class="greeting-list-item-btn greeting-list-item-delete">
+                                    <img  class="greeting-list-item-btn" src="./img/icons/delete.svg">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12  greeting-list-item">
+                                <div class="greeting-list-item-btn greeting-list-item-edit">
+                                    <img class="greeting-list-item-btn" src="./img/icons/pen.svg">
+                                </div>
+                                    <div class="greeting-list-item-id">ObjectId(7587898cvughvee4)</div>
+                                <div class="greeting-list-item-greeting greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Hello</div>
+                                    <div class="greeting-list-item-greeting-info">(Greeting)</div>
+                                </div>
+                                <div class="greeting-list-item-name greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Bhavesh</div>
+                                    <div class="greeting-list-item-greeting-info">(Name)</div>
+                                </div>
+                                <div class="greeting-list-item-time">15 mins ago</div>
+                                <div class="greeting-list-item-btn greeting-list-item-delete">
+                                    <img  class="greeting-list-item-btn" src="./img/icons/delete.svg">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12  greeting-list-item">
+                                <div class="greeting-list-item-btn greeting-list-item-edit">
+                                    <img class="greeting-list-item-btn" src="./img/icons/pen.svg">
+                                </div>
+                                    <div class="greeting-list-item-id">ObjectId(7587898cvughvee4)</div>
+                                <div class="greeting-list-item-greeting greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Hello</div>
+                                    <div class="greeting-list-item-greeting-info">(Greeting)</div>
+                                </div>
+                                <div class="greeting-list-item-name greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Bhavesh</div>
+                                    <div class="greeting-list-item-greeting-info">(Name)</div>
+                                </div>
+                                <div class="greeting-list-item-time">15 mins ago</div>
+                                <div class="greeting-list-item-btn greeting-list-item-delete">
+                                    <img  class="greeting-list-item-btn" src="./img/icons/delete.svg">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12  greeting-list-item">
+                                <div class="greeting-list-item-btn greeting-list-item-edit">
+                                    <img class="greeting-list-item-btn" src="./img/icons/pen.svg">
+                                </div>
+                                    <div class="greeting-list-item-id">ObjectId(7587898cvughvee4)</div>
+                                <div class="greeting-list-item-greeting greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Hello</div>
+                                    <div class="greeting-list-item-greeting-info">(Greeting)</div>
+                                </div>
+                                <div class="greeting-list-item-name greeting-list-item-data">
+                                    <div class="greeting-list-item-greeting-text">Bhavesh</div>
+                                    <div class="greeting-list-item-greeting-info">(Name)</div>
+                                </div>
+                                <div class="greeting-list-item-time">15 mins ago</div>
+                                <div class="greeting-list-item-btn greeting-list-item-delete">
+                                    <img  class="greeting-list-item-btn" src="./img/icons/delete.svg">
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -170,5 +298,7 @@
     </div>
 </div>
 </div>
+
+<script src="./js/script.js"></script>
 </body>
 </html>
