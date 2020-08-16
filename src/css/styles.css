@@ -214,6 +214,7 @@ body{
 }
 
 .greeting-list-item-edit{
+    display: none;
     right: 7%;
     top: 5%;
 }
@@ -222,6 +223,7 @@ body{
     top: 6%;
 }
 .greeting-list-item-delete{
+    display: none;
     right: 7%;
     bottom: 20%;
 }

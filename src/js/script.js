@@ -39,9 +39,16 @@ let greetingListItems=document.getElementById('greeting-list-items-list');
 
 function showList(){
     console.log(greetingList);
+
     if(listFlag){
         loadGreetingData();
         greetingList.style.display='block';
+        editFlag=true;
+        deleteFlag=true;
+        let editButtons= document.getElementsByClassName('greeting-list-item-edit');
+        let deleteButtons = document.getElementsByClassName('greeting-list-item-delete');
+        hideButtons(editButtons);
+        hideButtons(deleteButtons);
         listFlag=false;
     }else{
         greetingList.style.display='none';
@@ -66,7 +73,7 @@ function loadData(data){
     for(let i=0;i<data.length;i++){
         console.log(i);
         console.log(data[i]);
-        let item="<div class=\"col-md-4\"><div class=\"col-md-12  greeting-list-item\"><div class=\"greeting-list-item-btn greeting-list-item-edit\">"+
+        let item="<div class=\"col-md-4\"><div class=\"col-md-12  greeting-list-item\"><div  onclick=\"editGreeting('"+data[i]._id+"')\" class=\"greeting-list-item-btn greeting-list-item-edit\">"+
                 "<img class=\"greeting-list-item-btn\" src=\"./img/icons/pen.svg\">"+
             "</div>"+
                 "<div class=\"greeting-list-item-id\">ObjectId("+data[i]._id+")</div>"+
@@ -103,4 +110,50 @@ function deleteGreeting(id){
         loadGreetingData();
     })
     .catch(err => console.log(err));
+}
+
+let editFlag=true;
+
+function showEdit(){
+    let editButtons= document.getElementsByClassName('greeting-list-item-edit');
+    let deleteButtons = document.getElementsByClassName('greeting-list-item-delete');
+    if(!listFlag && editFlag){
+        hideButtons(deleteButtons);
+        deleteFlag=true;
+        showButtons(editButtons);
+        editFlag=false;
+    }else{
+        hideButtons(editButtons)
+        editFlag=true;
+    }
+}
+
+let deleteFlag=true;
+
+function showDelete(){
+    let editButtons= document.getElementsByClassName('greeting-list-item-edit');
+    let deleteButtons = document.getElementsByClassName('greeting-list-item-delete');
+    if(!listFlag && deleteFlag){
+        hideButtons(editButtons);
+        editFlag=true;
+        showButtons(deleteButtons);
+        deleteFlag=false;
+    }else{
+        hideButtons(deleteButtons)
+        deleteFlag=true;
+    }
+}
+
+function showButtons(buttons){
+    console.log(buttons);
+    for(let i=0;i<buttons.length;i++){
+        buttons[i].style.display="block";
+    }
+}
+
+function hideButtons(buttons){
+    console.log(buttons);
+    for(let i=0;i<buttons.length;i++){
+        buttons[i].style.display="none";
+    }
 }
