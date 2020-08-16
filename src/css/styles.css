@@ -194,3 +194,26 @@ body{
 .greeting-list-item-time{
     padding: 1em 0em;
 }
+
+.greeting-list-item-btn{
+    width: 15px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.greeting-list-item-edit{
+    right: 7%;
+    top: 5%;
+}
+
+.greeting-list-item-edit:hover{
+    top: 6%;
+}
+.greeting-list-item-delete{
+    right: 7%;
+    bottom: 20%;
+}
+
+.greeting-list-item-delete:hover{
+    bottom: 19%;
+}
