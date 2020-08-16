@@ -27,7 +27,6 @@ body{
 }
 
 .row{
-    height: 100%;
     margin: 0px;
 }
 
@@ -157,4 +156,41 @@ body{
 .greeting-list-col{
     padding-top: 2em;
     font-weight: bold;
+}
+
+.greeting-list-items{
+    padding-top: 2em;
+}
+
+
+.greeting-list-item {
+    border: solid 1px lightgray;
+    box-shadow: darkgrey 1px 1px 5px 2px;
+    color: gray;
+    margin: 1em 0em;
+}
+
+.greeting-list-item-id{
+    padding: 1em 0em;
+}
+
+.greeting-list-item-data{
+    display: flex;
+    flex-direction: row;
+}
+
+.greeting-list-item-greeting-text{
+    padding: 0.5em 0em;
+    color: black;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.greeting-list-item-greeting-info{
+    padding: 1em 0em;
+    align-self: center;
+}
+
+.greeting-list-item-time{
+    padding: 1em 0em;
 }
