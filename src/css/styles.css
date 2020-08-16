@@ -68,11 +68,15 @@ body{
     font-size: 0.8em;
 }
 
-.navbar{
+.navbar{    
     height: 3em;
     border-bottom: solid 1px lightgray;
     box-shadow: lightgrey 0px 5px 10px 0px;
     padding: 0px;
+    position: fixed;
+    width: -webkit-fill-available;
+    left: 0;
+    margin-left: 12.5em;
 }
 
 #navbarTitle{
@@ -92,7 +96,6 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    display: fixed;
 }
 
 .navbar-side-menu{
