@@ -156,13 +156,18 @@ body{
     align-items: center;
 }
 
-.greeting-list{
+#greeting-list{
     padding-top: 3em;
+    display: none;
 }
 
 .greeting-list-col{
     padding-top: 2em;
     font-weight: bold;
+}
+
+.greeting-list-title{
+    padding: 0px 15px;
 }
 
 .greeting-list-items{
