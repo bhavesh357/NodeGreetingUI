@@ -38,8 +38,6 @@ let greetingList=document.getElementById('greeting-list');
 let greetingListItems=document.getElementById('greeting-list-items-list');
 
 function showList(){
-    console.log(greetingList);
-
     if(listFlag){
         loadGreetingData();
         greetingList.style.display='block';
@@ -64,7 +62,6 @@ function loadGreetingData(){
     fetch('http://localhost:3000/greetings')
     .then(data => {return data.json()})
     .then(res => {
-        console.log(res);
         loadData(res);
     })
     .catch(err => {return err});
@@ -72,8 +69,6 @@ function loadGreetingData(){
 
 function loadData(data){
     greetingListItems.innerHTML="";
-    console.log(data);
-    console.log(data[2]);
     for(let i=0;i<data.length;i++){
         let item="<div class=\"col-md-4\"><div class=\"col-md-12  greeting-list-item\"><div  onclick=\"editGreeting('"+data[i]._id+"')\" class=\"greeting-list-item-btn greeting-list-item-edit\">"+
                 "<img class=\"greeting-list-item-btn\" src=\"./img/icons/pen.svg\">"+
@@ -100,7 +95,6 @@ let editFormFlag=true;
 let editForm= document.getElementById('editList');
 function editGreeting(id){
     showList();
-    console.log(editForm);
     fetch('http://localhost:3000/greeting/'+id)
     .then(data => { return data.json()})
     .then(res => {
@@ -126,14 +120,12 @@ function validateEdit(){
     let isFirstNameProper=validateName(firstName);
     let isLastNameProper=validateName(lastName);
     let isMessageProper= validateMessage(message);
-    console.log([isFirstNameProper,isLastNameProper,isMessageProper])
     if( isMessageProper && isLastNameProper && isFirstNameProper){
         updateData(currentEditingId,firstName.value,lastName.value,message.value);
     }
 }
 
 function updateData(id,firstName,lastName,message){
-    console.log(id,firstName,lastName,message);
     let greeting={
         firstName: firstName,
         lastName: lastName,
@@ -149,8 +141,8 @@ function updateData(id,firstName,lastName,message){
     fetch('http://localhost:3000/greeting/'+id,otherParams)
     .then(data => {return data.json()})
     .then(res => {
-        console.log(res);
         showList();
+        showToaster('snackbarUpdate');
     })
     .catch(err => {return err});
 }
@@ -189,7 +181,6 @@ function loadEditForm(data){
 }
 
 function deleteGreeting(id){
-    console.log(id);
     const otherParams={
         headers:{
             "content-type":"application/json; charset=UTF-8"
@@ -199,10 +190,13 @@ function deleteGreeting(id){
     fetch('http://localhost:3000/greeting/'+id,otherParams)
     .then(data => {return data.json()})
     .then(res => {
-        console.log(res);
         loadGreetingData();
+        deleteFlag=true;
+        showToaster('snackbarDelete');
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        return err;
+    });
 }
 
 let editFlag=true;
@@ -238,14 +232,12 @@ function showDelete(){
 }
 
 function showButtons(buttons){
-    console.log(buttons);
     for(let i=0;i<buttons.length;i++){
         buttons[i].style.display="block";
     }
 }
 
 function hideButtons(buttons){
-    console.log(buttons);
     for(let i=0;i<buttons.length;i++){
         buttons[i].style.display="none";
     }
@@ -284,7 +276,6 @@ function validateAdd(){
     }
 }
 function addData(id,firstName,lastName){
-    console.log(id,firstName,lastName);
     let greeting={
         firstName: firstName,
         lastName: lastName,
@@ -299,8 +290,17 @@ function addData(id,firstName,lastName){
     fetch('http://localhost:3000/greeting/',otherParams)
     .then(data => {return data.json()})
     .then(res => {
-        console.log(res);
         showList();
+        showToaster('snackbarAdd');
     })
     .catch(err => {return err});
 }
+
+function showToaster(id) {
+    var x = document.getElementById(id);
+    x.className = "snackbar show";
+    console.log(x);
+    setTimeout(()=>{ 
+        x.className = x.className.replace("snackbar show", "snackbar"); 
+    }, 3000);
+  }
