@@ -74,6 +74,7 @@ body{
     padding: 0px;
     position: fixed;
     width: -webkit-fill-available;
+    width: -moz-available;
     left: 0;
     margin-left: 12.5em;
     z-index: 1;
