@@ -250,3 +250,42 @@ a:hover{
     padding: 0.5em 1em;
     transition: all 0.3s ease-in;
 }
+
+#editList{
+    padding-top: 5em;
+    display: none;
+}
+
+.edit-greeting-list-title{
+    padding: 0px 15px;
+}
+
+.edit-greeting-form{
+    padding-top: 2em;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.edit-greeting-row{
+    padding: 15px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input:focus{
+    outline: none;
+}
+
+#editFormBtn{
+    background: #33b5e5;
+    border: none;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+}
+
+.edit-greeting-list-submit{
+    display: flex;
+    justify-content: flex-end;
+}   

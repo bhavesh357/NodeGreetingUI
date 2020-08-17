@@ -94,6 +94,35 @@ function loadData(data){
         greetingListItems.innerHTML+=item;
     }
 }
+let editFormFlag=true;
+let editForm= document.getElementById('editList');
+function editGreeting(id){
+    showList();
+    console.log(editForm);
+    fetch('http://localhost:3000/greeting/'+id)
+    .then(data => { return data.json()})
+    .then(res => {
+        loadEditForm(res);
+    })
+    .catch(err => console.log(err));
+}
+
+function showEditForm(){
+    if(editFormFlag){
+        editForm.style.display="block";
+        editFormFlag=false;
+    }else{
+        editForm.style.display="none";
+        editFormFlag=true;
+    }
+}
+
+function loadEditForm(data){
+    showEditForm();
+    document.getElementById('firstName').value=data.firstName;
+    document.getElementById('lastName').value=data.lastName;
+    document.getElementById('greetingMessage').value=data.message;
+}
 
 function deleteGreeting(id){
     console.log(id);
