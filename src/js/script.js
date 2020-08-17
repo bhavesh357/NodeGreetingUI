@@ -47,6 +47,8 @@ function showList(){
         deleteFlag=true;
         let editButtons= document.getElementsByClassName('greeting-list-item-edit');
         let deleteButtons = document.getElementsByClassName('greeting-list-item-delete');
+        addFlag=false;
+        showAdd();
         editFormFlag=false;
         showEditForm();
         hideButtons(editButtons);
@@ -73,8 +75,6 @@ function loadData(data){
     console.log(data);
     console.log(data[2]);
     for(let i=0;i<data.length;i++){
-        console.log(i);
-        console.log(data[i]);
         let item="<div class=\"col-md-4\"><div class=\"col-md-12  greeting-list-item\"><div  onclick=\"editGreeting('"+data[i]._id+"')\" class=\"greeting-list-item-btn greeting-list-item-edit\">"+
                 "<img class=\"greeting-list-item-btn\" src=\"./img/icons/pen.svg\">"+
             "</div>"+
@@ -249,4 +249,58 @@ function hideButtons(buttons){
     for(let i=0;i<buttons.length;i++){
         buttons[i].style.display="none";
     }
+}
+
+let addFlag=true;
+
+
+let addForm= document.getElementById('addList');
+
+function showAdd(){
+    if(addFlag){
+        if(!listFlag){
+            showList();
+        }
+        addForm.style.display="block";
+        let firstName=document.getElementById('firstNameAdd');
+        let lastName=document.getElementById('lastNameAdd');
+        firstName.value="";
+        lastName.value="";
+        addFlag=false;
+    }else{
+        addForm.style.display="none";
+        addFlag=true;
+    }
+}
+
+
+function validateAdd(){
+    let firstName=document.getElementById('firstNameAdd');
+    let lastName=document.getElementById('lastNameAdd');
+    let isFirstNameProper=validateName(firstName);
+    let isLastNameProper=validateName(lastName);
+    if( isLastNameProper && isFirstNameProper){
+        addData(currentEditingId,firstName.value,lastName.value);
+    }
+}
+function addData(id,firstName,lastName){
+    console.log(id,firstName,lastName);
+    let greeting={
+        firstName: firstName,
+        lastName: lastName,
+    }
+    const otherParams={
+        headers:{
+            "content-type":"application/json; charset=UTF-8"
+        },
+        body: JSON.stringify(greeting),
+        method: "POST"
+    };
+    fetch('http://localhost:3000/greeting/',otherParams)
+    .then(data => {return data.json()})
+    .then(res => {
+        console.log(res);
+        showList();
+    })
+    .catch(err => {return err});
 }

@@ -86,6 +86,30 @@
                 </div>
             </div>
         </div>
+        <div class="row" id="addList">
+            <div class="col-md-5 offset-1">
+                <div class="row">
+                    <div class="col-md-12 add-greeting-list">
+                        <h3 class="add-greeting-list-title">Add Greeting</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 add-greeting-form">
+                        <div class="add-greeting-list-first-name add-greeting-row">
+                            <label for="firstName">First name:</label>
+                            <input type="text" id="firstNameAdd" name="firstname" value="">
+                        </div>
+                        <div class="add-greeting-list-last-name add-greeting-row">
+                            <label for="lastName">Last name:</label>
+                            <input type="text" id="lastNameAdd" name="lastName" value="">
+                        </div>
+                        <div class="add-greeting-list-submit add-greeting-row">
+                            <input onclick="validateAdd()" id="addFormBtn" type="button" value="Add">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row " id="greeting-list" >
             <div class="col-md-10 offset-1">
                 <div class="row">

@@ -220,6 +220,7 @@ body{
     top: 5%;
 }
 
+
 .greeting-list-item-edit:hover{
     top: 6%;
 }
@@ -286,6 +287,43 @@ input:focus{
 }
 
 .edit-greeting-list-submit{
+    display: flex;
+    justify-content: flex-end;
+}   
+
+
+#addList{
+    padding-top: 5em;
+    display: none;
+}
+
+.add-greeting-list-title{
+    padding: 0px 15px;
+}
+
+.add-greeting-form{
+    padding-top: 2em;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.add-greeting-row{
+    padding: 15px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#addFormBtn{
+    background: #33b5e5;
+    border: none;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+}
+
+.add-greeting-list-submit{
     display: flex;
     justify-content: flex-end;
 }   
