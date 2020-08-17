@@ -47,6 +47,8 @@ function showList(){
         deleteFlag=true;
         let editButtons= document.getElementsByClassName('greeting-list-item-edit');
         let deleteButtons = document.getElementsByClassName('greeting-list-item-delete');
+        editFormFlag=false;
+        showEditForm();
         hideButtons(editButtons);
         hideButtons(deleteButtons);
         listFlag=false;
@@ -63,7 +65,7 @@ function loadGreetingData(){
         console.log(res);
         loadData(res);
     })
-    .catch(err => console.log(err));
+    .catch(err => {return err});
 }
 
 function loadData(data){
@@ -104,7 +106,7 @@ function editGreeting(id){
     .then(res => {
         loadEditForm(res);
     })
-    .catch(err => console.log(err));
+    .catch(err => {return err});
 }
 
 function showEditForm(){
@@ -117,8 +119,70 @@ function showEditForm(){
     }
 }
 
+function validateEdit(){
+    let firstName=document.getElementById('firstName');
+    let lastName=document.getElementById('lastName');
+    let message=document.getElementById('greetingMessage');
+    let isFirstNameProper=validateName(firstName);
+    let isLastNameProper=validateName(lastName);
+    let isMessageProper= validateMessage(message);
+    console.log([isFirstNameProper,isLastNameProper,isMessageProper])
+    if( isMessageProper && isLastNameProper && isFirstNameProper){
+        updateData(currentEditingId,firstName.value,lastName.value,message.value);
+    }
+}
+
+function updateData(id,firstName,lastName,message){
+    console.log(id,firstName,lastName,message);
+    let greeting={
+        firstName: firstName,
+        lastName: lastName,
+        message: message
+    }
+    const otherParams={
+        headers:{
+            "content-type":"application/json; charset=UTF-8"
+        },
+        body: JSON.stringify(greeting),
+        method: "PUT"
+    };
+    fetch('http://localhost:3000/greeting/'+id,otherParams)
+    .then(data => {return data.json()})
+    .then(res => {
+        console.log(res);
+        showList();
+    })
+    .catch(err => {return err});
+}
+
+const nameRegex=/^[A-Z][a-z]{2,10}$/;
+const messageRegex=/^[A-Za-z ]{5,50}$/;
+
+function validateName(name){
+    if(nameRegex.test(name.value)) {
+        return true;
+    }else{
+        name.value=""
+        name.placeholder="Enter Proper Name";
+        return false;
+    }
+}
+
+function validateMessage(message){
+    if(messageRegex.test(message.value)) {
+        return true;
+    }else{
+        message.value="";
+        message.placeholder="Enter Proper Message";
+        return false;
+    }
+}
+
+let currentEditingId;
+
 function loadEditForm(data){
     showEditForm();
+    currentEditingId=data._id;
     document.getElementById('firstName').value=data.firstName;
     document.getElementById('lastName').value=data.lastName;
     document.getElementById('greetingMessage').value=data.message;
