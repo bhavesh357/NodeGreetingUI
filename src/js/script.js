@@ -253,6 +253,9 @@ function showAdd(){
         if(!listFlag){
             showList();
         }
+        if(!editFormFlag){
+            showEditForm();
+        }
         addForm.style.display="block";
         let firstName=document.getElementById('firstNameAdd');
         let lastName=document.getElementById('lastNameAdd');
