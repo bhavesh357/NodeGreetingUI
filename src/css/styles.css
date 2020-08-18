@@ -9,7 +9,7 @@ body{
 
 
 .side-menu{
-    background: url('../img/side-image.jpg');
+    background: url('../assets/side-image.jpg');
     background-blend-mode: multiply; 
     width: 10em;
     height: 100%;
