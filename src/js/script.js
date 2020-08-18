@@ -71,7 +71,7 @@ function loadData(data){
     greetingListItems.innerHTML="";
     for(let i=0;i<data.length;i++){
         let item="<div class=\"col-md-4\"><div class=\"col-md-12  greeting-list-item\"><div  onclick=\"editGreeting('"+data[i]._id+"')\" class=\"greeting-list-item-btn greeting-list-item-edit\">"+
-                "<img class=\"greeting-list-item-btn\" src=\"./img/icons/pen.svg\">"+
+                "<img class=\"greeting-list-item-btn\" src=\"./assets/icons/pen.svg\">"+
             "</div>"+
                 "<div class=\"greeting-list-item-id\">ObjectId("+data[i]._id+")</div>"+
             "<div class=\"greeting-list-item-greeting greeting-list-item-data\">"+
@@ -84,7 +84,7 @@ function loadData(data){
             "</div>"+
             "<div class=\"greeting-list-item-time\">15 mins ago</div>"+
             "<div onclick=\"deleteGreeting('"+data[i]._id+"')\" class=\"greeting-list-item-btn greeting-list-item-delete\">"+
-                "<img  class=\"greeting-list-item-btn\" src=\"./img/icons/delete.svg\">"+
+                "<img  class=\"greeting-list-item-btn\" src=\"./assets/icons/delete.svg\">"+
             "</div>"+
             "</div>"+
         "</div>";
